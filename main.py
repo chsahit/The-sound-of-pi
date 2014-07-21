@@ -15,11 +15,14 @@ def play_pi():
 
 	pi = str(mp.pi)
 	print 'playing'
-	for i in range(mp.dps):
-		midinum = num_to_midinum[pi[i]]
-		fs.noteon(0,midinum,100) #play the note
-		time.sleep(0.5)
-	fs.delete()
+	try:
+		for i in range(mp.dps):
+			midinum = num_to_midinum[pi[i]]
+			fs.noteon(0,midinum,100) #play the note
+			time.sleep(0.3)
+	except KeyboardInterrupt:
+		print 'exiting'
+		fs.delete()
 
 if __name__ == "__main__":
 	play_pi()		
