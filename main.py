@@ -3,7 +3,7 @@ from sympy.mpmath import mp
 import time
 #contains the midinumbers fom all notes from C4 to E5 (C Major) and their number eqivalent in pi 
 num_to_midinum = {'0' : 60, '1' : '62','2' : 64, '3' : 65, '4' : 67, '5' : 69, '6' : 71, '7':72, '8' : 74, '9' : 76, '.' : 77}
-mp.dps = 1000 #precision for pi
+mp.dps = 10000 #precision for pi
 
 #converts the next digit of pi to a midi number
 def play_pi():
@@ -22,8 +22,9 @@ def play_pi():
 			time.sleep(0.3)
 			fs.noteoff(0,midinum)
 	except KeyboardInterrupt:
-		print 'exiting'
-		fs.delete()
+		pass
+	print 'finished'
+	fs.delete()
 
 if __name__ == "__main__":
 	play_pi()		
