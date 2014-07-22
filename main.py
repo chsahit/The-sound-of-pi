@@ -20,6 +20,7 @@ def play_pi():
 			midinum = num_to_midinum[pi[i]]
 			fs.noteon(0,midinum,100) #play the note
 			time.sleep(0.3)
+			fs.noteoff(0,midinum)
 	except KeyboardInterrupt:
 		print 'exiting'
 		fs.delete()
